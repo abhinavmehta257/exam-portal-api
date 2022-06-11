@@ -3,6 +3,7 @@ const isProduction = (process.env.NODE_ENV === 'production');
 const PORT = process.env.PORT || 8080;
 const express = require('express');
 var path = require('path');
+const cors = require('cors');
 const app = express();
 // const cluster = require('cluster');
 // const numCpus = require('os').cpus().length;
@@ -17,13 +18,7 @@ if (!isProduction) {
     app.use(require('errorhandler')());
 }
 
-app.use(function(req, res, next) {
-    res.setHeader('Access-Control-Allow-Origin', '*');
-    res.setHeader('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE');
-    res.setHeader('Access-Control-Allow-Headers', 'Content-Type');
-    res.setHeader('Access-Control-Allow-Credentials', true);
-    next();
-});
+app.use(cors());
 
 app.use(express.urlencoded({
     extended: true
