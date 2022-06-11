@@ -1,0 +1,14 @@
+uploads/*.xlsx
+uploads/*.pdf
+uploads/*.png
+.env
+.env.*
+config/config.json
+Common/*.json
+node_modules
+.vscode
+test.js
+site
+package-lock.json
+private/
+build.py

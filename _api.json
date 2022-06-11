@@ -1,0 +1,299 @@
+{
+	"info": {
+		"_postman_id": "08563e4d-4d01-4780-9544-f38bc88be440",
+		"name": "SuperC",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "User",
+			"item": [
+				{
+					"name": "Sign Up",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "noEmail",
+									"value": "true",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "12345678",
+									"type": "text"
+								},
+								{
+									"key": "name",
+									"value": "Hellow",
+									"type": "text"
+								},
+								{
+									"key": "role",
+									"value": "PARENT",
+									"type": "text"
+								},
+								{
+									"key": "profile",
+									"type": "file",
+									"src": [],
+									"disabled": true
+								},
+								{
+									"key": "phone",
+									"value": "1234567890",
+									"type": "text"
+								},
+								{
+									"key": "email",
+									"value": "abc@gmail.com",
+									"type": "text",
+									"disabled": true
+								}
+							]
+						},
+						"url": {
+							"raw": "{{HOST}}/user/signup",
+							"host": [
+								"{{HOST}}"
+							],
+							"path": [
+								"user",
+								"signup"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\":\"123456789x\",\r\n    \"password\":\"123456\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{HOST}}/user/login",
+							"host": [
+								"{{HOST}}"
+							],
+							"path": [
+								"user",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Forgot Password Send OTP",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\":\"1234567890\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{HOST}}/user/otp",
+							"host": [
+								"{{HOST}}"
+							],
+							"path": [
+								"user",
+								"otp"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Verify Otp",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"1234567890\",\r\n    \"otp\": \"614087\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{HOST}}/user/verify/otp",
+							"host": [
+								"{{HOST}}"
+							],
+							"path": [
+								"user",
+								"verify",
+								"otp"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Password",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"token\":\"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0ZW1wX2lkIjoiNjFiNGJlMDQwMTkxNzVhNWE0NGU5NTcwIiwiZXhwIjoxNjM5MjQ1MDg0LCJpYXQiOjE2MzkyNDMyODR9.xwRV1djM9c60zcZxM9UM9xQV13QK36zOBaeeLt7BzCI\",\r\n    \"password\":\"12345678\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{HOST}}/user/password",
+							"host": [
+								"{{HOST}}"
+							],
+							"path": [
+								"user",
+								"password"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Parent",
+			"item": [
+				{
+					"name": "Add Student",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"dob\":\"2011-01-11\",\r\n    \"password\":\"12345678\",\r\n    \"name\":\"Ajay Prakash\",\r\n    \"classID\":\"61b4c6922fdd3178e121c79f\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{HOST}}/parent/student",
+							"host": [
+								"{{HOST}}"
+							],
+							"path": [
+								"parent",
+								"student"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "List All Students",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{HOST}}/parent/students",
+							"host": [
+								"{{HOST}}"
+							],
+							"path": [
+								"parent",
+								"students"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "List all Profiles",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{HOST}}/parent/profiles",
+							"host": [
+								"{{HOST}}"
+							],
+							"path": [
+								"parent",
+								"profiles"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "List Classes",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{HOST}}/class/list",
+					"host": [
+						"{{HOST}}"
+					],
+					"path": [
+						"class",
+						"list"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"auth": {
+		"type": "bearer",
+		"bearer": [
+			{
+				"key": "token",
+				"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYxYjRiNTY3ZTc2NTMzNWEzYTYzOGQ4MCIsImV4cCI6MTYzOTMyNDAxMSwiaWF0IjoxNjM5MjM3NjExfQ.NO0KI--eyzfFAz9Dj3o8CvBNDVkQGImUgZs19YZzUr4",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	]
+}

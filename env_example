@@ -1,0 +1,3 @@
+DB_URL=mongodb+srv://nodejs:EkwLyQOdTLSV9EEY@cluster0.2okyd.mongodb.net/websiteSuperC?retryWrites=true&w=majority
+OLD_DB=mongodb+srv://superC:nit2071987@cluster0.zn2hb.mongodb.net/superC?retryWrites=true&w=majority
+SECRET=mysupersecretjwt
