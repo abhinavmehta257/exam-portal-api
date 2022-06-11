@@ -4,6 +4,7 @@ const PORT = process.env.PORT || 8080;
 const express = require('express');
 var path = require('path');
 const app = express();
+var cors = require("cors");
 // const cluster = require('cluster');
 // const numCpus = require('os').cpus().length;
 var cookieParser = require('cookie-parser')
@@ -15,6 +16,8 @@ if (!isProduction) {
     console.log('Dev Mode');
     //disabled for testing
     // app.use(require('cors')({ credentials: true, origin: true }));
+    //remove this line for production
+    app.use(cors());
     app.use(require('errorhandler')());
 }
 
