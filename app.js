@@ -17,10 +17,10 @@ if (!isProduction) {
     //disabled for testing
     // app.use(require('cors')({ credentials: true, origin: true }));
     //remove this line for production
-    app.use(cors());
     app.use(require('errorhandler')());
 }
 
+app.use(cors());
 
 app.use(express.urlencoded({
     extended: true
