@@ -3,7 +3,6 @@ const isProduction = (process.env.NODE_ENV === 'production');
 const PORT = process.env.PORT || 8080;
 const express = require('express');
 var path = require('path');
-const cors = require('cors');
 const app = express();
 // const cluster = require('cluster');
 // const numCpus = require('os').cpus().length;
@@ -14,11 +13,11 @@ require('./Models');
 
 if (!isProduction) {
     console.log('Dev Mode');
-    app.use(require('cors')({ credentials: true, origin: true }));
+    //disabled for testing
+    // app.use(require('cors')({ credentials: true, origin: true }));
     app.use(require('errorhandler')());
 }
 
-app.use(cors());
 
 app.use(express.urlencoded({
     extended: true
